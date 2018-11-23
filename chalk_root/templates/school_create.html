@@ -1,0 +1,183 @@
+{% load static %}
+{% load widget_tweaks %}
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> 
+<html class="no-js"> <!--<![endif]-->
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <meta name="description" content="Bingo One page parallax responsive HTML Template ">
+
+  <title>Add School</title>
+
+<!-- Mobile Specific Meta
+  ================================================== -->
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  
+  	<link rel="stylesheet" href="{% static 'vendor/bootstrap/css/bootstrap.min.css' %}">
+    <link rel="stylesheet" href="vendor/font-awesome/css/font-awesome.min.css">
+    <link rel="stylesheet" href="css/fontastic.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,700">
+    <link rel="stylesheet" href="vendor/@fancyapps/fancybox/jquery.fancybox.min.css">
+  <link rel="stylesheet" href="{% static 'css/style.css' %}">
+  <link rel="stylesheet" href="{% static 'css/tagify.css' %}">
+</head>
+
+<body id="body">
+
+ <!--
+  Start Preloader
+  ==================================== -->
+  <div id="preloader">
+    <div class="preloader">
+      <div class="sk-circle1 sk-child"></div>
+      <div class="sk-circle2 sk-child"></div>
+      <div class="sk-circle3 sk-child"></div>
+      <div class="sk-circle4 sk-child"></div>
+      <div class="sk-circle5 sk-child"></div>
+      <div class="sk-circle6 sk-child"></div>
+      <div class="sk-circle7 sk-child"></div>
+      <div class="sk-circle8 sk-child"></div>
+      <div class="sk-circle9 sk-child"></div>
+      <div class="sk-circle10 sk-child"></div>
+      <div class="sk-circle11 sk-child"></div>
+      <div class="sk-circle12 sk-child"></div>
+    </div>
+  </div> 
+ {% include 'partials/nav_primary.html' %}
+<!-- Srart Contact Us
+		=========================================== -->		
+	<section class="contact-us section bg-gray" id="contact">
+		<div class="container">
+			<div class="row">
+				<div class="col">
+					<div class="title text-center">
+						<h2>Add School.</h2>
+						<span class="border"></span>
+						<p>PLease enter the below details to add a new school</p>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<!-- Contact Form -->
+				<div class="contact-form col-12 col-md-6  mx-auto" >
+					<form id="contact-form" method="post" role="form">{% csrf_token %}
+					
+						<div class="form-group">
+							{% render_field form.sid class="form-control" placeholder="School ID" %}
+						</div>
+						<div class="form-group">
+							{% render_field form.name class="form-control" placeholder="School Name" %}
+						</div>
+						<div class="form-group">
+							{% render_field form.address_line1 class="form-control" placeholder="School Address Line 1" %}
+						</div>
+						<div class="form-group">
+							{% render_field form.address_line2 class="form-control" placeholder="School Address Line 2" %}
+						</div>
+						<div class="form-group">
+							{% render_field form.area class="form-control" placeholder="Area" %}
+						</div>
+						<div class="form-group">
+							{% render_field form.city class="form-control" placeholder="City" %}
+						</div>
+						<div class="form-group">
+							{% render_field form.state class="form-control" placeholder="State" %}
+						</div>
+						<div class="form-group">
+							{% render_field form.description class="form-control" placeholder="Description" %}
+						</div>
+						<div class="form-group">
+							<input name='facilities' class='form-control' id="id_facilities" placeholder='Facilities' autofocus>
+						</div>
+						<div class="form-group">
+							{% render_field form.contact_number class="form-control" placeholder="Contact Number" %}
+						</div>
+						<div class="form-group">
+							{% render_field form.website class="form-control" placeholder="Website" %}
+						</div>
+						<div class="form-group">
+							{% render_field form.photos class="form-control" placeholder="Photos" %}
+						</div>
+						<div class="form-group">
+							{% render_field form.admission_info class="form-control" placeholder="Admission Info" %}
+						</div>
+						<div class="form-group">
+							{% render_field form.academic_record class="form-control" placeholder="Academic Record" %}
+						</div>
+						<div id="mail-success" class="success">
+							Thank you. The Mailman is on His Way :)
+						</div>
+						
+						<div id="mail-fail" class="error">
+							Sorry, don't know what happened. Try later :(
+						</div>
+						
+						<div id="cf-submit">
+							<input type="submit" id="contact-submit" class="btn btn-transparent" value="Submit">
+						</div>						
+						
+					</form>
+				</div>
+				<!-- ./End Contact Form -->
+			</div> <!-- end row -->
+			
+		</div> <!-- end container -->
+	</section> <!-- end section -->
+
+{% include 'partials/footer.html' %}
+    
+    <script src="{% static 'vendor/jquery/jquery.min.js' %}"></script>
+    <script src="{% static 'vendor/popper.js/umd/popper.min.js' %}"> </script>
+    <script src="{% static 'vendor/bootstrap/js/bootstrap.min.js' %}"></script>
+    <script src="{% static 'vendor/jquery.cookie/jquery.cookie.js' %}"> </script>
+    <script src="{% static 'vendor/@fancyapps/fancybox/jquery.fancybox.min.js' %}"></script>
+    <script src="{% static 'js/front.js' %}"></script>
+    <script src="{% static 'js/script.js' %}"></script>
+    <script src="{% static 'js/tagify.polyfills.js' %}"></script>
+    <script src="{% static 'js/tagify.js' %}"></script>
+    <script src="{% static 'js/jQuery.tagify.js' %}"></script>
+
+<script data-name="basic">
+(function(){
+
+var input = document.querySelector('input[name=facilities]'),
+    tagify = new Tagify(input, {
+        whitelist : [
+        'Playground', 'Canteen', 'Transport',
+        ],
+        blacklist : [""]
+    });
+
+// "remove all tags" button event listener
+document.querySelector('.tags--removeAllBtn')
+    .addEventListener('click', tagify.removeAllTags.bind(tagify))
+
+// Chainable event listeners
+tagify.on('add', onAddTag)
+      .on('remove', onRemoveTag)
+      .on('invalid', onInvalidTag);
+
+// tag added callback
+function onAddTag(e){
+    console.log(e, e.detail);
+    console.log( tagify.DOM.originalInput.value )
+    tagify.off('add', onAddTag) // exmaple of removing a custom Tagify event
+}
+
+// tag remvoed callback
+function onRemoveTag(e){
+    console.log(e, e.detail);
+}
+
+// invalid tag added callback
+function onInvalidTag(e){
+    console.log(e, e.detail);
+}
+
+})()
+</script>
+  </body>
+  </html>

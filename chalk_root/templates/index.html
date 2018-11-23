@@ -1,0 +1,217 @@
+{% load static i18n %}
+<html>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <link href="https://fonts.googleapis.com/css?family=Lato:400,600,700" rel="stylesheet" />
+    <link href="{% static 'index/css/main.css' %}" rel="stylesheet" />
+    <script src="{% static 'index/js/main.js' %}"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.3.0/css/font-awesome.css" rel="stylesheet">
+    <link href="//cdnjs.cloudflare.com/ajax/libs/normalize/3.0.2/normalize.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Handlee" rel="stylesheet">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <!-- Compiled and minified BOOTSTRAP  -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+
+  </head>
+  <body>
+    <nav class="navbar-custom">
+      <ul>
+        <li><a href="/" style="font-family: 'Handlee';">ChalkRoot</a></li>
+      </ul>
+      <div class="button">
+        <a class="btn-open" href="#"></a>
+      </div>
+    </nav>
+<div class="overlay">
+  <div class="wrap">
+    <ul class="wrap-nav">
+      <li><a href="#">About</a>
+      <ul>
+        <li><a href="#">Some Text</a></li>
+        <li><a href="#">Some Text</a></li>
+        <li><a href="#">Some Text</a></li>
+        <li><a href="#">Some Text</a></li>
+      </ul>
+      </li>
+      <li><a href="#">Methodologies</a>
+      <ul>
+        <li><a href="https://www.google.hr/">Web Design</a></li>
+        <li><a href="#">Some Text</a></li>
+        <li><a href="#">Some Text</a></li>
+        <li><a href="#">Some Text design</a></li>
+        <li><a href="#">Some Text</a></li>
+      </ul>
+      </li>
+
+    </ul>
+    <div class="social">
+      <a href="http://mario-loncarek.from.hr/">
+      <div class="social-icon">
+        <i class="fa fa-facebook"></i>
+      </div>
+      </a>
+      <a href="#">
+      <div class="social-icon">
+        <i class="fa fa-twitter"></i>
+      </div>
+      </a>
+      <a href="#">
+      <div class="social-icon">
+        <i class="fa fa-instagram"></i>
+      </div>
+      </a>
+      <a href="#">
+      <div class="social-icon">
+        <i class="fa fa-linkedin"></i>
+      </div>
+      </a>
+      <p>
+        Copyright 2018 ChalkRoot
+      </p>
+    </div>
+  </div>
+</div>
+     <div class="s009">
+      <form>
+        <div class="inner-form">
+          <div class="basic-search">
+            <div class="input-field" class="input-group">
+              <input id="search1" type="text" placeholder="Search by School Name, Area, Pincode" />
+              <div class="icon-wrap">
+                <svg class="svg-inline--fa fa-search fa-w-16" fill="#ccc" aria-hidden="true" data-prefix="fas" data-icon="search" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+                  <path d="M505 442.7L405.3 343c-4.5-4.5-10.6-7-17-7H372c27.6-35.3 44-79.7 44-128C416 93.1 322.9 0 208 0S0 93.1 0 208s93.1 208 208 208c48.3 0 92.7-16.4 128-44v16.3c0 6.4 2.5 12.5 7 17l99.7 99.7c9.4 9.4 24.6 9.4 33.9 0l28.3-28.3c9.4-9.4 9.4-24.6.1-34zM208 336c-70.7 0-128-57.2-128-128 0-70.7 57.2-128 128-128 70.7 0 128 57.2 128 128 0 70.7-57.2 128-128 128z"></path>
+                </svg>
+              </div>
+            </div>
+          </div>
+          <div class="advance-search">
+            <span class="desc">ADVANCED SEARCH</span>
+            <div class="row">
+              <div class="input-field">
+                <div class="input-select">
+                  <select data-trigger="" name="choices-single-defaul">
+                    <option placeholder="" value="" selected="true" disabled="disabled">Board</option>
+                    <option value="cbse">CBSE</option>
+                    <option value="icse">ICSE</option>
+                  </select>
+                </div>
+              </div>
+              <div class="input-field">
+                <div class="input-select">
+                  <select data-trigger="" name="choices-single-defaul">
+                    <option placeholder="" value="" selected="true" disabled="disabled">Stage</option>
+                    <option value="primary">Primary School</option>
+                    <option value="secondary">Secondary School</option>
+                    <option value="high">High School</option>
+                  </select>
+                </div>
+              </div>
+              <div class="input-field">
+                <div class="input-select">
+                  <select data-trigger="" name="choices-single-defaul">
+                    <option placeholder="" value="" selected="true" disabled="disabled">Type</option>
+                    <option value="coed">Co-ed</option>
+                    <option value="single">Single Sex</option>
+                  </select>
+                </div>
+              </div>
+            </div>
+            
+            <div class="row third">
+              <div class="input-field">
+                <div class="result-count">
+                  </div>
+                <div class="group-btn">
+                  <button class="btn-delete" id="delete">RESET</button>
+                  <button class="btn-search">SEARCH</button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </form>
+    </div>
+    <script>
+    $(document).ready(function(){
+      $("#search1").focus(function() {
+        $('.advance-search').show();
+      });
+    });
+</script>
+    <script src="{% static 'index/js/extention/choices.js' %}"></script>
+    <script>
+      $(document).ready(function(){
+    $(".toggle").click(function(){
+        $(".advance-search").toggle();
+    });
+});
+      const customSelects = document.querySelectorAll("select");
+      const deleteBtn = document.getElementById('delete')
+      const choices = new Choices('select',
+      {
+        searchEnabled: false,
+        itemSelectText: '',
+        removeItemButton: true,
+      });
+      deleteBtn.addEventListener("click", function(e)
+      {
+        e.preventDefault()
+        const deleteAll = document.querySelectorAll('.choices__button')
+        for (let i = 0; i < deleteAll.length; i++)
+        {
+          deleteAll[i].click();
+        }
+      });
+
+</script>
+    </script>
+    <div class="container-fluid" style="padding-right: 0; padding-left: 0;">
+      <div class="divider-main text-center">
+        <h3 style="font-family: 'Handlee'; margin-top: 3%;">Suggest Some Text Here</h3>
+      </div>
+    </div>
+    <div class="container-fluid" style="padding-right: 0; padding-left: 0;">
+      <div class="row">
+      <div class="col-md-6" id="left" style="padding-right: 0; padding-left: 0;">
+          <video style="width:100%;" playsinline="playsinline" autoplay="autoplay" muted="muted" loop="loop">
+                <source src="{% static 'mp4/bg.mp4' %}" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+      </div>
+      <button id="map_btn" class="btn" style="background-color:#5588ff; z-index:1000; position:fixed;bottom:0;color:white;padding:1%;">Find Schools Near You <span class="col-md-1"><i class="fa fa-map-marker-alt"></i></span></button>
+      <div class="col-md-6 right-image" id="right" style="padding-right: 0; padding-left: 0;">
+        
+      </div>
+    </div>
+    </div>
+    <section id="map_sec" style="overflow-y: hidden;overflow-x: hidden;background-color:white;position:fixed;width:100%;height:100%;top:0px;left:0px;z-index:1000;display:none;">
+    <div class="col-md-12" style="height: 100%;">
+      <div class="col-md-12" ><i id="close_map" style="float:right;" class="fa fa-window-close"></i></div>
+      <div style="height:100%;" class="row">
+        <div style="height:100%;" class="col-md-6">
+          <div id="pac-container">
+                <input id="pac-input" type="text" placeholder="Search for school">
+              </div>
+        </div>
+        <div style="height:100%;" class="col-md-6" id="map"></div>
+      </div>
+    </div>
+  </section>
+  <script type="text/javascript">
+    $(document).ready(function(){
+    $(".button a").click(function(){
+        $(".overlay").fadeToggle(200);
+       $(this).toggleClass('btn-open').toggleClass('btn-close');
+    });
+});
+$('.overlay').on('click', function(){
+    $(".overlay").fadeToggle(200);   
+    $(".button a").toggleClass('btn-open').toggleClass('btn-close');
+    open = false;
+});
+  </script>
+  </body><!-- This templates was made by Colorlib (https://colorlib.com) -->
+</html>

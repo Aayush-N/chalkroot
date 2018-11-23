@@ -1,0 +1,266 @@
+{%load static%}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="#">
+    <meta name="keywords" content="#">
+    <!-- Favicons -->
+    <link rel="shortcut icon" href="#">
+    <!-- Page Title -->
+    <title>{{school.name}}</title>
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="{% static 'single-listing/css/bootstrap.min.css' %}">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,500,700,900" rel="stylesheet">
+    <!-- Simple line Icon -->
+    <link rel="stylesheet" href="{% static 'single-listing/css/simple-line-icons.css' %}">
+    <!-- Themify Icon -->
+    <link rel="stylesheet" href="{% static 'single-listing/css/themify-icons.css' %}">
+    <!-- Hover Effects -->
+    <link rel="stylesheet" href="{% static 'single-listing/css/set1.css' %}">
+    <!-- Swipper Slider -->
+    <link rel="stylesheet" href="{% static 'single-listing/css/swiper.min.css' %}">
+    <!-- Magnific Popup CSS -->
+    <link rel="stylesheet" href="{% static 'single-listing/css/magnific-popup.css' %}">
+    <!-- Main CSS -->
+    <link rel="stylesheet" href="{% static 'single-listing/css/style.css' %}">
+</head>
+
+<body>
+    <!--============================= HEADER =============================-->
+    {% include 'partials/nav_primary.html' %}
+    <!--//END HEADER -->
+    <!--============================= BOOKING =============================-->
+    <div>
+        <!-- Swiper -->
+        <div class="swiper-container">
+            <div class="swiper-wrapper">
+
+                <div class="swiper-slide">
+                    <a href="{{school.photos.url}}" class="grid image-link">
+                        <img style="max-width: 100%;" src="{{school.photos.url}}" class="img-fluid" alt="#">
+                    </a>
+                </div>
+                
+            </div>
+        </div>
+    </div>
+    <!--//END BOOKING -->
+    <!--============================= RESERVE A SEAT =============================-->
+    <section class="reserve-block">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6">
+                    <h3>{{school.name}}</h3>
+                    <p class="reserve-description">{{school.address_line1 | title}}</p>
+                </div>
+                <div class="col-md-6">
+                    <div class="reserve-seat-block">
+                        <div class="reserve-rating">
+                            <span>{{school.overall_rating}}</span>
+                        </div>
+                        <!--div class="review-btn">
+                            <a href="#" class="btn btn-outline-danger">WRITE A REVIEW</a>
+                            <span>34 reviews</span>
+                        </div-->
+                        <div class="reserve-btn">
+                            <div class="featured-btn-wrap">
+                                <a href="#" class="btn btn-danger">Compare</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!--//END RESERVE A SEAT -->
+    <!--============================= BOOKING DETAILS =============================-->
+    <section class="light-bg booking-details_wrap">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-8 responsive-wrap">
+                    <div class="booking-checkbox_wrap">
+                        <div class="booking-checkbox">
+                            <b>Description</b>
+                            <br>
+                            <p>Some Description about the school - {{school.description}}</p>
+                            <hr>
+                        </div>
+                        <div class="booking-checkbox">
+                            <b>Details:</b>
+                        </div>
+                        <br>
+                        <p><b>Board:</b> {{school.board}}</p>
+                        <p><b>Category:</b> {{school.category}}</p>
+                        <hr>
+                        <div class="booking-checkbox">
+                            <b>Facilities:</b>
+                        </div>
+                        <br>
+                        <div class="row">
+
+                            <div class="col-md-4">
+                                <label class="custom-checkbox">
+                                    <span class="ti-check-box"></span>
+                                    <span class="custom-control-description">Library</span>
+                                </label>
+                            </div>
+                            <div class="col-md-4">
+                                <label class="custom-checkbox">
+                                   <span class="ti-check-box"></span>
+                                   <span class="custom-control-description">Computer Labs</span>
+                                 </label>
+                            </div>
+                            <div class="col-md-4">
+                                <label class="custom-checkbox">
+                                    <span class="ti-check-box"></span>
+                                    <span class="custom-control-description">Science Labs</span>
+                                </label>
+                            </div>
+                            <div class="col-md-4">
+                                <label class="custom-checkbox">
+                                    <span class="ti-check-box"></span>
+                                    <span class="custom-control-description">Swimming Pool</span>
+                                </label>
+                            </div>
+                            <div class="col-md-4">
+                                <label class="custom-checkbox">
+                                    <span class="ti-check-box"></span>
+                                    <span class="custom-control-description">Infirmary/ Medical Centre</span>
+                                </label>
+                            </div>
+                            <div class="col-md-4">
+                                <label class="custom-checkbox">
+                                    <span class="ti-check-box"></span>
+                                    <span class="custom-control-description">Amphitheatre</span>
+                                </label>
+                            </div>
+                            <div class="col-md-4">
+                                <label class="custom-checkbox">
+                                    <span class="ti-check-box"></span>
+                                    <span class="custom-control-description">Cafeteria</span>
+                                </label>
+                            </div>
+                        </div>
+
+                    </div>
+                    <br>
+                    <div class="contact-info">
+                        <div class="address">
+                            <b>After School Activities Available:</b>
+                        </div>
+                        <div class="address">
+                            <a href="#" class="btn btn-outline-primary btn-contact">Tennis Classes</a>
+                            <a href="#" class="btn btn-outline-primary btn-contact">Swimming Classes</a>
+                            <a href="#" class="btn btn-outline-primary btn-contact">Abacus Classes</a>
+                        </div>
+                        <a href="#" class="btn btn-outline-success btn-contact">Register</a>
+                    </div>
+                </div>
+                    
+                <div class="col-md-4 responsive-wrap">
+                    <div class="contact-info">
+                        <div class="mapouter"><div class="gmap_canvas"><iframe width="100%" height="271" id="gmap_canvas" src="https://maps.google.com/maps?q=delhi%20public%20school%20yelahanka&t=&z=13&ie=UTF8&iwloc=&output=embed" frameborder="0" scrolling="no" marginheight="0" marginwidth="0"></iframe></div><style>.mapouter{text-align:right;height:271px;}.gmap_canvas {overflow:hidden;background:none!important;}</style></div>
+                        <div class="address">
+                            <span class="icon-location-pin"></span>
+                            <p>{{school.address_line1}}<br>{{school.state}}<br> 560064</p>
+                        </div>
+                        <div class="address">
+                            <span class="icon-screen-smartphone"></span>
+                            <p> +91 {{school.contact_number}}</p>
+                        </div>
+                        <div class="address">
+                            <span class="icon-link"></span>
+                            <p><a href="{{school.website}}"> {{school.website}}</a></p>
+                        </div>
+                        <div class="address">
+                            <span class="icon-clock"></span>
+                            <p><span>Mon - Fri 09:30 am - 03:30 pm </span></p>
+                        </div>
+                        <a href="#" class="btn btn-outline-success btn-contact">CONTACT</a>
+                    </div>
+                    <div class="follow">
+                        <div class="follow-img">
+                            <h6>Scorecard</h6>
+                            <span>Detailed Score</span>
+                        </div>
+                        <ul class="social-counts">
+                            <li>
+                                <h6>26</h6>
+                                <span>Category 1</span>
+                            </li>
+                            <li>
+                                <h6>326</h6>
+                                <span>Category 2</span>
+                            </li>
+                            <li>
+                                <h6>12</h6>
+                                <span>Category 3</span>
+                            </li>
+                        </ul>
+                        
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!--//END BOOKING DETAILS -->
+    <!--============================= FOOTER =============================-->
+    <footer class="main-block dark-bg">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="copyright">
+                        <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+                        <p>Copyright &copy; 2018 ChalkRoot</p>
+                        <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+                        <ul>
+                            <li><a href="#"><span class="ti-facebook"></span></a></li>
+                            <li><a href="#"><span class="ti-twitter-alt"></span></a></li>
+                            <li><a href="#"><span class="ti-instagram"></span></a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <!--//END FOOTER -->
+
+
+
+
+    <!-- jQuery, Bootstrap JS. -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="{% static 'single-listing/js/jquery-3.2.1.min.js' %}"></script>
+    <script src="{% static 'single-listing/js/popper.min.js' %}"></script>
+    <script src="{% static 'single-listing/js/bootstrap.min.js' %}"></script>
+    <!-- Magnific popup JS -->
+    <script src="{% static 'single-listing/js/jquery.magnific-popup.js' %}"></script>
+    <!-- Swipper Slider JS -->
+    <script src="{% static 'single-listing/js/swiper.min.js' %}"></script>
+    <script>
+        if ($('.image-link').length) {
+            $('.image-link').magnificPopup({
+                type: 'image',
+                gallery: {
+                    enabled: true
+                }
+            });
+        }
+        if ($('.image-link2').length) {
+            $('.image-link2').magnificPopup({
+                type: 'image',
+                gallery: {
+                    enabled: true
+                }
+            });
+        }
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,207 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+  	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+		<meta name="description" content="">
+		<meta name="author" content="">
+
+		<title>School List</title>
+
+		<!-- Bootstrap core CSS -->
+		<link href="{% static 'vendor/bootstrap/css/bootstrap.min.css' %}" rel="stylesheet">
+
+		<!-- Custom fonts for this template -->
+		<link href="{% static 'vendor/fontawesome-free/css/all.min.css' %}" rel="stylesheet" type="text/css">
+		<link href="https://fonts.googleapis.com/css?family=Open+Sans:400,700" rel="stylesheet" type="text/css">
+		<link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css">
+		<link href='https://fonts.googleapis.com/css?family=Kaushan+Script' rel='stylesheet' type='text/css'>
+		<link href='https://fonts.googleapis.com/css?family=Droid+Serif:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
+		<link href='https://fonts.googleapis.com/css?family=Roboto+Slab:400,100,300,700' rel='stylesheet' type='text/css'>
+
+		<!-- Custom styles for this template -->
+		<link href="{% static 'css/agency.css' %}" rel="stylesheet">
+	</head>
+
+  	<body id="page-top">
+	{% include 'partials/nav_primary.html' %}
+		<section id="portfolio">
+	  		<div class="container">
+				<div class="row">
+					<div class="col-md-3">
+						<button class="accordion">Rating</button>
+						<div class="panel">
+						  	<div class="filter-attributes checkbox">
+								<ul style="list-style: none;">
+									{% for rating in ratings %}
+										<li id="catalogue_opened_li"><label><input id="{{rating}}" type="checkbox" name="rating" value="{{rating}}">{{ rating }}</label></li>
+									{% endfor %}
+								</ul>
+							</div>
+						</div>
+
+						<button class="accordion">Board</button>
+						<div class="panel">
+						  <div class="filter-attributes checkbox">
+								<ul style="list-style: none;">
+									{% for board in board %}
+										<li id="catalogue_opened_li"><label><input id="{{board.name}}" type="checkbox" name="board" value="{{board.name}}">{{ board.name }}</label></li>
+									{% endfor %}
+								</ul>
+							</div>
+						</div>
+
+						<button class="accordion">Location</button>
+						<div class="panel">
+						  	<div class="filter-attributes checkbox">
+								<ul style="list-style: none;">
+									<li id="catalogue_opened_li"><label><input id="Bangalore" type="checkbox" name="location" value="Bangalore">Bangalore</label></li>
+									<li id="catalogue_opened_li"><label><input id="Kochi" type="checkbox" name="location" value="Kochi">Kochi</label></li>
+								</ul>
+							</div>
+						</div>
+					</div>
+	  				{% for i in object_list %}
+		  			<div class="col-md-3 col-sm-6 portfolio-item">
+		  				<div data-location="{{i.city}}" data-rating="{{i.overall_rating}}" data-board="{{i.board.name}}" class="grid-variants">
+							<a class="portfolio-link" href="/school/{{i.sid}}">
+				  				<img style="width:400px;height:250px;" class="img-fluid" src="{{i.photos.url}}" alt="">
+							</a>
+							<div class="portfolio-caption">
+				  				<h5 style="overflow:hidden; white-space:nowrap; text-overflow: ellipsis;">{{i.name | title}}</h5>
+				  				<p class="text-muted">{{i.city | title}}, {{i.state | title}}</p>
+							</div>
+						</div>
+		  			</div>
+		  			{% empty %}
+		  			<h2 class="mx-auto">Oops...We couldn't find any schools. Try refining your search</h2>
+		  			{% endfor %}
+	  			</div>
+	  		</div>
+		</section>
+
+	<div class="portfolio-modal modal fade" id="portfolioModal6" tabindex="-1" role="dialog" aria-hidden="true">
+	  <div class="modal-dialog">
+		<div class="modal-content">
+		  <div class="close-modal" data-dismiss="modal">
+			<div class="lr">
+			  <div class="rl"></div>
+			</div>
+		  </div>
+		  <div class="container">
+			<div class="row">
+			  <div class="col-lg-8 mx-auto">
+				<div class="modal-body">
+				  <!-- Project Details Go Here -->
+				  <h2 class="text-uppercase">Project Name</h2>
+				  <p class="item-intro text-muted">Lorem ipsum dolor sit amet consectetur.</p>
+				  <img class="img-fluid d-block mx-auto" src="img/portfolio/06-full.jpg" alt="">
+				  <p>Use this area to describe your project. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Est blanditiis dolorem culpa incidunt minus dignissimos deserunt repellat aperiam quasi sunt officia expedita beatae cupiditate, maiores repudiandae, nostrum, reiciendis facere nemo!</p>
+				  <ul class="list-inline">
+					<li>Date: January 2017</li>
+					<li>Client: Window</li>
+					<li>Category: Photography</li>
+				  </ul>
+				  <button class="btn btn-primary" data-dismiss="modal" type="button">
+					<i class="fas fa-times"></i>
+					Close Project</button>
+				</div>
+			  </div>
+			</div>
+		  </div>
+		</div>
+	  </div>
+	</div>
+
+	{% include 'partials/footer.html' %}
+	<!-- Bootstrap core JavaScript -->
+	<script src="{% static 'vendor/jquery/jquery.min.js' %}"></script>
+	<script src="{% static 'vendor/bootstrap/js/bootstrap.bundle.min.js' %}"></script>
+
+	<script>
+	var acc = document.getElementsByClassName("accordion");
+	var i;
+
+	for (i = 0; i < acc.length; i++) {
+	    acc[i].addEventListener("click", function() {
+	        this.classList.toggle("active");
+	        var panel = this.nextElementSibling;
+	        if (panel.style.display === "block") {
+	            panel.style.display = "none";
+	        } else {
+	            panel.style.display = "block";
+	        }
+	    });
+	}
+	</script>
+	<script>
+	$(document).ready(function() {
+  var $products = $('.portfolio-item'),
+      $variants = $('.grid-variants'),
+      $filters = $(".filter-attributes input[type='checkbox']"),
+      product_filter = new ProductFilterLevel2($products, $variants, $filters);
+  product_filter.init();
+});
+
+$(function() {
+    $(".filter-attributes input[type='checkbox']").change(function() {
+        if(this.checked) {
+            $('#filter_list').append('<hr id="filter_hr"><li style="text-transform: capitalize;" id="filter_list_li">' + $(this).attr('name') + ':' + $(this).attr('value') + '<span id="remove_filter" onclick="return removeFilter();"><a style="cursor:pointer;"><i style="color:black;" class="fa fa-times"></i></a></span></li>')
+        }
+    })
+})
+function removeFilter() {
+    _this.filters.prop('checked', false);
+}
+function ProductFilterLevel2(products, variants, filters) {
+  var _this = this;
+
+  this.init = function() {
+    this.products = products;
+    this.variants = variants;
+    this.filters = filters;
+    this.bindEvents();
+  };
+
+  this.bindEvents = function() {
+    this.filters.click(this.filterGridProducts);
+    $('#none').click(this.removeAllFilters);
+  };
+
+  this.filterGridProducts = function() {
+    //hide all
+    _this.products.hide();
+    var filteredProducts = _this.variants;
+    //filter by colour, size, shape etc
+    var filterAttributes = $('.filter-attributes'); 
+    // for each attribute check the corresponding attribute filters selected
+    filterAttributes.each(function(){
+      var selectedFilters = $(this).find('input:checked');
+      // if selected filter by the attribute
+      if (selectedFilters.length) {
+        var selectedFiltersValues = [];
+        selectedFilters.each(function() {
+          var currentFilter = $(this);
+          $('#none').css('display', 'block');
+          $('#filter_help').css('display', 'none');
+          selectedFiltersValues.push("[data-" + currentFilter.attr('name') + "='" + currentFilter.val() + "']");
+        });
+        filteredProducts = filteredProducts.filter(selectedFiltersValues.join(','));
+      }
+    });
+      filteredProducts.parent().show();
+  };
+
+  this.removeAllFilters = function() {
+    _this.filters.prop('checked', false);
+    $('#filter_help').css('display', 'block');
+    $('#none').css('display', 'none');
+    $('#filter_list').empty();
+    _this.products.show();
+  }
+}
+	</script>
+  </body>
+
+</html>
